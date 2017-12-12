@@ -3,7 +3,7 @@ package mem
 import (
 	"encoding/json"
 
-	"github.com/shirou/gopsutil/internal/common"
+	"github.com/gshamov/gopsutil/internal/common" // had to do this to go build it; shirou is the right one
 )
 
 var invoke common.Invoker
@@ -58,6 +58,7 @@ type VirtualMemoryStat struct {
 	Slab         uint64 `json:"slab"`
 	PageTables   uint64 `json:"pagetables"`
 	SwapCached   uint64 `json:"swapcached"`
+	CommittedAS  uint64 `json:"committedas"`
 }
 
 type SwapMemoryStat struct {
