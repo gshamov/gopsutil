@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/shirou/gopsutil/internal/common"
+	"github.com/gshamov/gopsutil/internal/common"
 	"golang.org/x/sys/unix"
 )
 
@@ -60,6 +60,8 @@ func VirtualMemory() (*VirtualMemoryStat, error) {
 			ret.PageTables = t * 1024
 		case "SwapCached":
 			ret.SwapCached = t * 1024
+		case "Committed_AS":
+                        ret.CommittedAS = t * 1024
 		}
 	}
 	if !memavail {
